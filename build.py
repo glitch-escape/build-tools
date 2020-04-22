@@ -2,8 +2,13 @@
 import argparse
 import os
 
-
-BUILD_DIR = '../Builds'
+# check if we're (probably) in a tools folder in a glitch escape projects directory or not
+# if we are, make the build dir there; if not, use a build folder in the same dir we're
+# running this script from
+if os.path.exists('../Assets'):
+    BUILD_DIR = '../Builds'
+else:
+    BUILD_DIR = 'Builds'
 
 
 def parse_cli_args():
